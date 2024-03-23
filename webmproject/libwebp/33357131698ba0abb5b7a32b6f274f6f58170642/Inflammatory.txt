@@ -1,0 +1,69 @@
+> cwebp -mt -z 9 "Inflammatory.webp" -o "Inflammatory.100.webp"
+Dimension: 1080 x 1920
+Lossless-RGBA compressed size: 101,028 B (~ 98.67 KiB)
+  * Header size: 2,400 B; Image data size: 98,602 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
+
+> cwebp -mt -near_lossless 80 -z 9 "Inflammatory.webp" -o "Inflammatory.80.webp"
+Lossless-RGBA compressed size: 97,020 B (~ 94.75 KiB)
+  * Header size: 2,239 B; Image data size: 94,756 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
+
+> cwebp -mt -near_lossless 60 -z 9 "Inflammatory.webp" -o "Inflammatory.60.webp"
+Lossless-RGBA compressed size: 92,116 B (~ 89.96 KiB)
+  * Header size: 1,476 B; Image data size: 90,615 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
+
+> cwebp -mt -near_lossless 40 -z 9 "Inflammatory.webp" -o "Inflammatory.40.webp"
+Lossless-RGBA compressed size: 88,308 B (~ 86.24 KiB)
+  * Header size: 1,393 B; Image data size: 86,890 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=9
+
+> cwebp -mt -near_lossless 20 -z 9 "Inflammatory.webp" -o "Inflammatory.20.webp"
+Lossless-RGBA compressed size: 82,778 B (~ 80.84 KiB)
+  * Header size: 1,611 B; Image data size: 81,141 B
+  * Precision Bits: histogram=5 transform=4 cache=9
+
+> cwebp -mt -near_lossless 0 -z 9 "Inflammatory.webp" -o "Inflammatory.0.webp"
+Lossless-RGBA compressed size: 75,006 B (~ 73.25 KiB)
+  * Header size: 943 B; Image data size: 74,037 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=8
+
+
+> cwebp -mt -z 9 "Inflammatory.80.webp" -o "Inflammatory.80.re.webp"
+Lossless-RGBA compressed size: 97,020 B (~ 94.75 KiB)
+  * Header size: 2,239 B; Image data size: 94,756 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
+
+> cwebp -mt -z 9 "Inflammatory.60.webp" -o "Inflammatory.60.re.webp"
+Lossless-RGBA compressed size: 92,116 B (~ 89.96 KiB)
+  * Header size: 1,476 B; Image data size: 90,615 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
+
+> cwebp -mt -z 9 "Inflammatory.40.webp" -o "Inflammatory.40.re.webp"
+Lossless-RGBA compressed size: 87,982 B (~ 85.92 KiB)
+  * Header size: 1,437 B; Image data size: 86,519 B
+  * Lossless features used: Palette
+  * Precision Bits: histogram=5 transform=4 cache=0
+  * Palette size: 150 colors
+
+> cwebp -mt -z 9 "Inflammatory.20.webp" -o "Inflammatory.20.re.webp"
+Lossless-RGBA compressed size: 82,764 B (~ 80.83 KiB)
+  * Header size: 1,374 B; Image data size: 81,365 B
+  * Lossless features used: Palette
+  * Precision Bits: histogram=5 transform=4 cache=0
+  * Palette size: 102 colors
+
+> cwebp -mt -z 9 "Inflammatory.0.webp" -o "Inflammatory.0.re.webp"
+Lossless-RGBA compressed size: 75,006 B (~ 73.25 KiB)
+  * Header size: 943 B; Image data size: 74,037 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=8
+  * Palette size: 85 colors

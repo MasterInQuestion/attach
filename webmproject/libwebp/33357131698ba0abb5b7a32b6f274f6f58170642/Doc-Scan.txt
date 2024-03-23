@@ -1,0 +1,43 @@
+> cwebp -mt -z 9 "Doc-Scan.webp" -o "Doc-Scan.100.webp"
+Dimension: 5660 x 3282
+Lossless-RGBA compressed size: 24,300,504 B (~ 23.18 MiB)
+  * Header size: 105,199 B; Image data size: 24,195,280 B
+  * Lossless features used: Prediction Cross-Color-Transform
+  * Precision Bits: histogram=7 transform=4 cache=0
+
+> cwebp -mt -near_lossless 40 -z 9 "Doc-Scan.webp" -o "Doc-Scan.40.webp"
+Lossless-RGBA compressed size: 13,016,260 B (~ 12.42 MiB)
+  * Header size: 30,484 B; Image data size: 12,985,751 B
+  * Lossless features used: Prediction Cross-Color-Transform
+  * Precision Bits: histogram=7 transform=4 cache=10
+
+> cwebp -mt -near_lossless 20 -z 9 "Doc-Scan.webp" -o "Doc-Scan.20.webp"
+Lossless-RGBA compressed size: 12,693,468 B (~ 12.11 MiB)
+  * Header size: 30,189 B; Image data size: 12,663,253 B
+  * Lossless features used: Prediction Cross-Color-Transform
+  * Precision Bits: histogram=7 transform=4 cache=10
+
+> cwebp -mt -near_lossless 0 -z 9 "Doc-Scan.webp" -o "Doc-Scan.0.webp"
+Lossless-RGBA compressed size: 12,576,568 B (~ 12 MiB)
+  * Header size: 29,948 B; Image data size: 12,546,594 B
+  * Lossless features used: Prediction Cross-Color-Transform
+  * Precision Bits: histogram=7 transform=4 cache=10
+
+
+> cwebp -mt -z 9 "Doc-Scan.40.webp" -o "Doc-Scan.40.re.webp"
+Lossless-RGBA compressed size: 13,016,802 B (~ 12.42 MiB)
+  * Header size: 31,017 B; Image data size: 12,985,759 B
+  * Lossless features used: Prediction Cross-Color-Transform
+  * Precision Bits: histogram=7 transform=4 cache=10
+
+> cwebp -mt -z 9 "Doc-Scan.20.webp" -o "Doc-Scan.20.re.webp"
+Lossless-RGBA compressed size: 12,694,610 B (~ 12.11 MiB)
+  * Header size: 30,453 B; Image data size: 12,664,131 B
+  * Lossless features used: Prediction Cross-Color-Transform
+  * Precision Bits: histogram=7 transform=4 cache=10
+
+> cwebp -mt -z 9 "Doc-Scan.0.webp" -o "Doc-Scan.0.re.webp"
+Lossless-RGBA compressed size: 12,576,808 B (~ 12 MiB)
+  * Header size: 30,789 B; Image data size: 12,545,993 B
+  * Lossless features used: Prediction Cross-Color-Transform
+  * Precision Bits: histogram=7 transform=4 cache=10

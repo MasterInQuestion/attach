@@ -1,0 +1,35 @@
+> cwebp -mt -z 9 "Firefox_Safari_Chrome.webp" -o "Firefox_Safari_Chrome.100.webp"
+Dimension: 2408 x 1900
+Lossless-RGBA compressed size: 94,122 B (~ 91.92 KiB)
+  * Header size: 4,257 B; Image data size: 89,840 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=6 transform=4 cache=10
+
+> cwebp -mt -near_lossless 80 -z 9 "Firefox_Safari_Chrome.webp" -o "Firefox_Safari_Chrome.80.webp"
+Lossless-RGBA compressed size: 92,804 B (~ 90.63 KiB)
+  * Header size: 4,112 B; Image data size: 88,667 B
+  * Precision Bits: histogram=6 transform=4 cache=10
+
+> cwebp -mt -near_lossless 60 -z 9 "Firefox_Safari_Chrome.webp" -o "Firefox_Safari_Chrome.60.webp"
+Lossless-RGBA compressed size: 88,512 B (~ 86.44 KiB)
+  * Header size: 3,495 B; Image data size: 84,991 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=6 transform=4 cache=10
+
+> cwebp -mt -near_lossless 40 -z 9 "Firefox_Safari_Chrome.webp" -o "Firefox_Safari_Chrome.40.webp"
+Lossless-RGBA compressed size: 80,980 B (~ 79.09 KiB)
+  * Header size: 3,283 B; Image data size: 77,671 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=6 transform=4 cache=10
+
+> cwebp -mt -near_lossless 20 -z 9 "Firefox_Safari_Chrome.webp" -o "Firefox_Safari_Chrome.20.webp"
+Lossless-RGBA compressed size: 70,924 B (~ 69.27 KiB)
+  * Header size: 2,674 B; Image data size: 68,225 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=6 transform=4 cache=9
+
+> cwebp -mt -near_lossless 0 -z 9 "Firefox_Safari_Chrome.webp" -o "Firefox_Safari_Chrome.0.webp"
+Lossless-RGBA compressed size: 64,494 B (~ 62.99 KiB)
+  * Header size: 1,808 B; Image data size: 62,661 B
+  * Lossless features used: Subtract-Green
+  * Precision Bits: histogram=6 transform=4 cache=8
