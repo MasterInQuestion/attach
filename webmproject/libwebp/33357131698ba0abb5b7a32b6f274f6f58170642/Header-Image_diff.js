@@ -57,7 +57,7 @@
 	[ 30789 + 12545993, 12576808 ] ];
 
 	for ( var _ = "", i = 0; i < x.length; ++ i ) {
-	_ += ( typeof x[i] === "string" ? x[i]:
+	_ += ( typeof x[i] === "string" ? x[i] :
 	"\t" + f( x[i][1] ) + " - " + f( x[i][0] ) + " = " + f( x[i][1] - x[i][0] ) ) +
 	'\n';
 	};
