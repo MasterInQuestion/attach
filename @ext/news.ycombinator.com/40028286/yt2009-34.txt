@@ -1,0 +1,67 @@
+> cwebp -mt -z 9 "yt2009-34.webp" -o "yt2009-34.100.webp"
+Dimension: 1024 x 768
+Lossless-RGBA compressed size: 120,522 B (~ 117.7 KiB)
+  * Header size: 4,340 B; Image data size: 116,157 B
+  * Lossless features used: Prediction Cross-Color-Transform Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=9
+
+> cwebp -mt -near_lossless 80 -z 9 "yt2009-34.webp" -o "yt2009-34.80.webp"
+Lossless-RGBA compressed size: 107,758 B (~ 105.24 KiB)
+  * Header size: 3,918 B; Image data size: 103,814 B
+  * Lossless features used: Prediction Cross-Color-Transform Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=9
+
+> cwebp -mt -near_lossless 60 -z 9 "yt2009-34.webp" -o "yt2009-34.60.webp"
+Lossless-RGBA compressed size: 98,004 B (~ 95.71 KiB)
+  * Header size: 3,993 B; Image data size: 93,985 B
+  * Lossless features used: Prediction Cross-Color-Transform Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
+
+> cwebp -mt -near_lossless 40 -z 9 "yt2009-34.webp" -o "yt2009-34.40.webp"
+Lossless-RGBA compressed size: 88,446 B (~ 86.38 KiB)
+  * Header size: 3,471 B; Image data size: 84,950 B
+  * Lossless features used: Prediction Cross-Color-Transform Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
+
+> cwebp -mt -near_lossless 20 -z 9 "yt2009-34.webp" -o "yt2009-34.20.webp"
+Lossless-RGBA compressed size: 83,070 B (~ 81.13 KiB)
+  * Header size: 3,072 B; Image data size: 79,972 B
+  * Lossless features used: Prediction Cross-Color-Transform Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
+
+> cwebp -mt -near_lossless 0 -z 9 "yt2009-34.webp" -o "yt2009-34.0.webp"
+Lossless-RGBA compressed size: 81,684 B (~ 79.77 KiB)
+  * Header size: 3,093 B; Image data size: 78,565 B
+  * Lossless features used: Prediction Cross-Color-Transform Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
+
+
+> cwebp -mt -z 9 "yt2009-34.80.webp" -o "yt2009-34.80.re.webp"
+Lossless-RGBA compressed size: 106,900 B (~ 104.4 KiB)
+  * Header size: 3,626 B; Image data size: 103,248 B
+  * Lossless features used: Prediction Cross-Color-Transform Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=8
+
+> cwebp -mt -z 9 "yt2009-34.60.webp" -o "yt2009-34.60.re.webp"
+Lossless-RGBA compressed size: 99,258 B (~ 96.94 KiB)
+  * Header size: 4,089 B; Image data size: 95,144 B
+  * Lossless features used: Prediction Cross-Color-Transform Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
+
+> cwebp -mt -z 9 "yt2009-34.40.webp" -o "yt2009-34.40.re.webp"
+Lossless-RGBA compressed size: 88,388 B (~ 86.32 KiB)
+  * Header size: 3,590 B; Image data size: 84,773 B
+  * Lossless features used: Prediction Cross-Color-Transform Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
+
+> cwebp -mt -z 9 "yt2009-34.20.webp" -o "yt2009-34.20.re.webp"
+Lossless-RGBA compressed size: 83,344 B (~ 81.4 KiB)
+  * Header size: 3,251 B; Image data size: 80,067 B
+  * Lossless features used: Prediction Cross-Color-Transform Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
+
+> cwebp -mt -z 9 "yt2009-34.0.webp" -o "yt2009-34.0.re.webp"
+Lossless-RGBA compressed size: 81,812 B (~ 79.9 KiB)
+  * Header size: 2,909 B; Image data size: 78,878 B
+  * Lossless features used: Prediction Cross-Color-Transform Subtract-Green
+  * Precision Bits: histogram=5 transform=4 cache=10
