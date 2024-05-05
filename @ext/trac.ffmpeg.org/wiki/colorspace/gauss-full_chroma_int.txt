@@ -1,4 +1,4 @@
-> ffmpeg -v debug -hide_banner -nostdin -nostats -i "W020170309545700135684.jpg" -i "W020170309545700291313.jpg" -lavfi "sws_flags=gauss+accurate_rnd+full_chroma_int+print_info; hstack,format=rgb24" -lossless 1 -q 100 -compression_level 6 "gauss.webp"
+> ffmpeg -v debug -hide_banner -nostdin -nostats -i "W020170309545700135684.jpg" -i "W020170309545700291313.jpg" -lavfi "sws_flags=gauss+accurate_rnd+print_info; hstack,format=rgb24" -lossless 1 -q 100 -compression_level 6 "gauss-full_chroma_int.webp"
 Splitting the commandline.
 Reading option '-v' ... matched as option 'v' (set logging level) with argument 'debug'.
 Reading option '-hide_banner' ... matched as option 'hide_banner' (do not show program banner) with argument '1'.
@@ -6,18 +6,18 @@ Reading option '-nostdin' ... matched as option 'stdin' (enable or disable inter
 Reading option '-nostats' ... matched as option 'stats' (print progress report during encoding) with argument 0.
 Reading option '-i' ... matched as input url with argument 'W020170309545700135684.jpg'.
 Reading option '-i' ... matched as input url with argument 'W020170309545700291313.jpg'.
-Reading option '-lavfi' ... matched as option 'lavfi' (create a complex filtergraph) with argument 'sws_flags=gauss+accurate_rnd+full_chroma_int+print_info; hstack,format=rgb24'.
+Reading option '-lavfi' ... matched as option 'lavfi' (create a complex filtergraph) with argument 'sws_flags=gauss+accurate_rnd+print_info; hstack,format=rgb24'.
 Reading option '-lossless' ... matched as AVOption 'lossless' with argument '1'.
 Reading option '-q' ... matched as option 'q' (use fixed quality scale (VBR)) with argument '100'.
 Reading option '-compression_level' ... matched as AVOption 'compression_level' with argument '6'.
-Reading option 'gauss.webp' ... matched as output url.
+Reading option 'gauss-full_chroma_int.webp' ... matched as output url.
 Finished splitting the commandline.
 Parsing a group of options: global .
 Applying option v (set logging level) with argument debug.
 Applying option hide_banner (do not show program banner) with argument 1.
 Applying option nostdin (enable or disable interaction on standard input) with argument 0.
 Applying option nostats (print progress report during encoding) with argument 0.
-Applying option lavfi (create a complex filtergraph) with argument sws_flags=gauss+accurate_rnd+full_chroma_int+print_info; hstack,format=rgb24.
+Applying option lavfi (create a complex filtergraph) with argument sws_flags=gauss+accurate_rnd+print_info; hstack,format=rgb24.
 [AVFilterGraph] Setting 'pix_fmts' to value 'rgb24'
 Successfully parsed a group of options.
 Parsing a group of options: input url W020170309545700135684.jpg.
@@ -112,10 +112,10 @@ Input #1, image2, from 'W020170309545700291313.jpg':
   Duration: 00:00:00.04, start: 0.000000, bitrate: 461533 kb/s
   Stream #1:0, 1, 1/25: Video: mjpeg (Baseline), 1 reference frame, yuvj440p(pc, bt470bg/unknown/unknown, center), 2912x4368, 0/1, 25 fps, 25 tbr, 25 tbn
 Successfully opened the file.
-Parsing a group of options: output url gauss.webp.
+Parsing a group of options: output url gauss-full_chroma_int.webp.
 Applying option q (use fixed quality scale (VBR)) with argument 100.
 Successfully parsed a group of options.
-Opening an output file: gauss.webp.
+Opening an output file: gauss-full_chroma_int.webp.
 [out#0/webp] Creating output stream from unlabeled output of complex filtergraph 0. This overrides automatic video mapping.
 [vost#0:0/libwebp_anim] Created video stream from complex filtergraph 0:[format:default]
 [vost#0:0/libwebp_anim]
@@ -135,10 +135,10 @@ Stream mapping:
 [in#0/image2] Starting thread...
 [in#1/image2] Starting thread...
 [in#0/image2] EOF while reading input
+[in#0/image2] Terminating thread with return code 0 (success)
 [mjpeg] marker=d8 avail_size_in_buf=2940157
 [mjpeg] marker parser used 0 bytes (0 bits)
 [mjpeg] marker=e1 avail_size_in_buf=2940155
-[in#0/image2] Terminating thread with return code 0 (success)
 [mjpeg] marker parser used 10012 bytes (80096 bits)
 [mjpeg] marker=db avail_size_in_buf=2930140
 [mjpeg] index=0
@@ -178,12 +178,11 @@ Stream mapping:
 [mjpeg] decode frame unused 0 bytes
 [vist#0:0/mjpeg] [dec:mjpeg] Decoder thread received EOF packet
 [in#1/image2] EOF while reading input
-[vist#0:0/mjpeg] [dec:mjpeg] Decoder returned EOF, finishing
 [mjpeg] marker=d8 avail_size_in_buf=2307663
 [mjpeg] marker parser used 0 bytes (0 bits)
 [mjpeg] marker=e1 avail_size_in_buf=2307661
+[vist#0:0/mjpeg] [dec:mjpeg] Decoder returned EOF, finishing
 [in#1/image2] Terminating thread with return code 0 (success)
-[vist#0:0/mjpeg] [dec:mjpeg] Terminating thread with return code 0 (success)
 [mjpeg] marker parser used 10069 bytes (80552 bits)
 [mjpeg] marker=db avail_size_in_buf=2297589
 [mjpeg] index=0
@@ -199,6 +198,7 @@ Stream mapping:
 [mjpeg] component 1 1:1 id: 2 quant:1
 [mjpeg] component 2 1:1 id: 3 quant:1
 [mjpeg] pix fmt id 12111100
+[vist#0:0/mjpeg] [dec:mjpeg] Terminating thread with return code 0 (success)
 [mjpeg] Format yuvj440p chosen by get_format().
 [mjpeg] marker parser used 17 bytes (136 bits)
 [mjpeg] marker=c4 avail_size_in_buf=2297432
@@ -243,11 +243,11 @@ detected 16 logical cores
 [graph 0 input from stream 1:0] Setting 'frame_rate' to value '25/1'
 [graph 0 input from stream 1:0] w:2912 h:4368 pixfmt:yuvj440p tb:1/25 fr:25/1 sar:0/1 csp:bt470bg range:pc
 [format] Setting 'pix_fmts' to value 'bgra|yuv420p|yuva420p'
-[auto_scale_0] Setting 'flags' to value 'gauss+accurate_rnd+full_chroma_int+print_info'
-[auto_scale_0] w:iw h:ih flags:'gauss+accurate_rnd+full_chroma_int+print_info' interl:0
+[auto_scale_0] Setting 'flags' to value 'gauss+accurate_rnd+print_info'
+[auto_scale_0] w:iw h:ih flags:'gauss+accurate_rnd+print_info' interl:0
 [Parsed_format_1] auto-inserting filter 'auto_scale_0' between the filter 'Parsed_hstack_0' and the filter 'Parsed_format_1'
-[auto_scale_1] Setting 'flags' to value 'gauss+accurate_rnd+full_chroma_int+print_info'
-[auto_scale_1] w:iw h:ih flags:'gauss+accurate_rnd+full_chroma_int+print_info' interl:0
+[auto_scale_1] Setting 'flags' to value 'gauss+accurate_rnd+print_info'
+[auto_scale_1] w:iw h:ih flags:'gauss+accurate_rnd+print_info' interl:0
 [format] auto-inserting filter 'auto_scale_1' between the filter 'Parsed_format_1' and the filter 'format'
 [AVFilterGraph] query_formats: 6 queried, 9 merged, 6 already done, 0 delayed
 [auto_scale_1] picking bgra out of 3 ref:rgb24 alpha:0
@@ -255,155 +255,171 @@ detected 16 logical cores
 [Parsed_hstack_0] [framesync] Sync level 1
 [swscaler] deprecated pixel format used, make sure you did set range correctly
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
 SwScaler: reducing / aligning filtersize 1 -> 4
-    Last message repeated 1 times
+SwScaler: reducing / aligning filtersize 17 -> 8
 SwScaler: reducing / aligning filtersize 1 -> 1
 SwScaler: reducing / aligning filtersize 9 -> 4
 [swscaler] [swscaler] Gaussian scaler, from yuv440p to rgb24 using MMXEXT
 [swscaler] [swscaler] 5824x4368 -> 5824x4368
 [swscaler] [swscaler] lum srcW=5824 srcH=4368 dstW=5824 dstH=4368 xInc=65536 yInc=65536
-[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=5824 dstH=4368 xInc=65536 yInc=32768
-[auto_scale_0] w:5824 h:4368 fmt:yuvj440p csp:unknown range:pc sar:0/1 -> w:5824 h:4368 fmt:rgb24 csp:gbr range:pc sar:0/1 flags:0x00043080
+[swscaler] [swscaler] chr srcW=5824 srcH=2184 dstW=2912 dstH=4368 xInc=131072 yInc=32768
+[auto_scale_0] w:5824 h:4368 fmt:yuvj440p csp:unknown range:pc sar:0/1 -> w:5824 h:4368 fmt:rgb24 csp:gbr range:pc sar:0/1 flags:0x00041080
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
+[swscaler] [swscaler] Forcing full internal H chroma due to input having non subsampled chroma
 [swscaler] [swscaler] using unscaled rgb24 -> bgra special converter
-[auto_scale_1] w:5824 h:4368 fmt:rgb24 csp:gbr range:pc sar:0/1 -> w:5824 h:4368 fmt:bgra csp:gbr range:pc sar:0/1 flags:0x00043080
+[auto_scale_1] w:5824 h:4368 fmt:rgb24 csp:gbr range:pc sar:0/1 -> w:5824 h:4368 fmt:bgra csp:gbr range:pc sar:0/1 flags:0x00041080
 [graph 0 input from stream 0:0] video frame properties congruent with link at pts_time: 0
 [graph 0 input from stream 1:0] video frame properties congruent with link at pts_time: 0
 [libwebp_anim] Lossless - quality=100.0 method=6
-Output #0, webp, to 'gauss.webp':
+Output #0, webp, to 'gauss-full_chroma_int.webp':
   Metadata:
     encoder         : Lavf61.3.103
   Stream #0:0, 0, 1/1000: Video: webp, 1 reference frame, bgra(pc, gbr/unknown/unknown, progressive), 5824x4368, 0/1, q=2-31, 200 kb/s, 25 fps, 1k tbn
@@ -420,12 +436,12 @@ INFO: Added frame. offset:0,0 dispose:0 blend:1
 [vost#0:0/libwebp_anim] Terminating thread with return code 0 (success)
 [out#0/webp] All streams finished
 [out#0/webp] Terminating thread with return code 0 (success)
-[AVIOContext] Statistics: 19154446 bytes written, 0 seeks, 74 writeouts
-[out#0/webp] Output file #0 (gauss.webp):
-[out#0/webp]   Output stream #0:0 (video): 1 frames encoded; 1 packets muxed (19154446 bytes);
-[out#0/webp]   Total: 1 packets (19154446 bytes) muxed
-[out#0/webp] video:18706KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.000000%
-frame=    1 fps=0.0 q=-0.0 Lsize=   18706KiB time=00:00:00.04 bitrate=3830889.2kbits/s speed=N/A
+[AVIOContext] Statistics: 16082738 bytes written, 0 seeks, 62 writeouts
+[out#0/webp] Output file #0 (gauss-full_chroma_int.webp):
+[out#0/webp]   Output stream #0:0 (video): 1 frames encoded; 1 packets muxed (16082738 bytes);
+[out#0/webp]   Total: 1 packets (16082738 bytes) muxed
+[out#0/webp] video:15706KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.000000%
+frame=    1 fps=0.0 q=-0.0 Lsize=   15706KiB time=00:00:00.04 bitrate=3216547.6kbits/s speed=N/A
 [in#0/image2] Input file #0 (W020170309545700135684.jpg):
 [in#0/image2]   Input stream #0:0 (video): 1 packets read (2940159 bytes); 1 frames decoded; 0 decode errors;
 [in#0/image2]   Total: 1 packets (2940159 bytes) demuxed
