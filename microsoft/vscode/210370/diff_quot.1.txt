@@ -1,0 +1,34 @@
+<meta charset="UTF-8" />
+<video playsinline controls style="
+	width: 100%; height: 48px;
+	z-index: 2147483647; position: fixed; top: 0;
+" src=""
+
+	onerror="
+	prompt( 'MediaError',
+	( 'code: ' + this.error.code + ', message: ' + this.error.message ) );
+	"
+	onloadstart="
+	this._0 = true;
+// ^ Lock variable for handling race condition of repeatedly calling rapidly.
+	this._f = function ( x0, x1, x2 ) {
+	document.documentElement.style.backgroundColor = x0;
+	document.body.style.opacity = x1;
+	( x2 ) && ( x2._0 = true );
+	};
+	"
+	onplay="
+	console.log( ( this._ = new Date() ).toISOString() );
+	( this._0 ) && (
+	this._0 = false,
+	setTimeout( this._f, 100,
+	document.documentElement.style.backgroundColor,
+	document.body.style.opacity, this )
+	);
+	this._f( '#F0F', 0.6 );
+	"
+	onended="
+	prompt( 'Video ended.\nSeconds elapsed since last &quot;play&quot;:',
+	( (new Date() - this._) / 1000 ) );
+	"
+></video>
