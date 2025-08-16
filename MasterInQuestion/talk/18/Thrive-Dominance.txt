@@ -1,0 +1,45 @@
+= OCR result linted of "Thrive-Dominance.webp" =
+
+[ "06043762.cn"
+	力: 谓土地甲兵之力.
+	假仁者: 本无是心, 而借其事以为功者也.
+	霸: 若 齐桓, 晋文 是也.
+	以德行仁: 则自吾之得于心者推之, 无适而非仁也.
+
+	赡: 足也.
+	<诗>: <大雅>: <文王有声> 之篇: "王霸之心: 诚伪不同."
+	; 故人所以应之者, 其不同亦如此.
+	邹氏 曰:
+	以力服人者: 有意于服人, 而人不敢不服.
+	以德服人者: 无意于服人, 而人不能不服.
+	从古以来论王霸者多矣: 未有若此章之深切而著明者也. ]
+
+[ "06072995.cn"
+	王霸之分德与力也.
+	以力假仁者: 以其势力假仁之事以行之.
+	如: {齐桓}责 "苞茅" 于{楚}, 会{王世子}于{首止}, 衣裳之会不以兵车; 之类是也.
+	惟其大国也, 故其力得以胁诸国而从之.
+	不然, 其能以强人乎?
+	.
+	若夫以德行仁: 则是以德而行其仁政.
+	至诚恻怛: 本于其心, 而形于事为.
+	如木之有本, 水之有源也.
+
+	曰 "王不待大": 盖言无所资于力也.
+	观{汤}与{文王}则可以见:
+	或以七十里, 或以百里; 则其力可知矣.
+	然则天下归之者: 岂非以德乎?
+	.
+	盖以力服人者: 特以力不赡之故, 不得已而服之. 而其中心固莫之服也.
+	至于以德服人: 虽无意于人之服, 而人将中心悦而诚服之.
+	如七十子之服{孔子}: 浃洽充满, 盎然服从. 无一毫勉强之意.
+	<诗> 曰: "自西自东, 自南自北: 无思不服."
+	; 言感无不通也.
+	回视区区势力欲以服人者: 不亦陋乎? ]
+
+
+	Rough translation:
+	https://translate.google.com/translate?hl=en&sl=auto&tl=en&u=https://github.com/MasterInQuestion/attach/raw/main/MasterInQuestion/talk/18/Thrive-Dominance.txt
+	.
+	Original nevertheless not much meaningful:
+	Mostly either baseless (also much erroneous) assertions; or mere repetition without further thoughts.
